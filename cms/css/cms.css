@@ -1,5 +1,5 @@
 /* Staff CMS styles — denser, same brand greens as web/app */
-@import url("../../css/tokens.css");
+@import url("../../css/tokens.css?v=hk20261112b");
 
 :root {
   --cms-bg: var(--mint);
@@ -521,7 +521,6 @@ body.cms-body { background: var(--color-paper); color: var(--color-ink-2); font-
 .cms-body h1, .cms-body h2, .cms-body h3 {
   font-family: var(--font-display);
   font-weight: var(--display-weight);
-  font-variation-settings: "wdth" 75, "opsz" 96;
   letter-spacing: var(--tracking-display);
   color: var(--color-ink);
 }
@@ -553,5 +552,5 @@ body.cms-body { background: var(--color-paper); color: var(--color-ink-2); font-
 .cms-stat { text-decoration: none; background: transparent; border: 0; border-right: var(--rule-hair) solid var(--color-rule); padding: 1rem; transition: background-color var(--dur-short) var(--ease-out); }
 .cms-stat:last-child { border-right: 0; }
 .cms-stat:hover { background: var(--color-paper-2); }
-.cms-stat .v { font-family: var(--font-display); font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; font-size: 3rem; line-height: 1; color: var(--color-ink); font-variant-numeric: lining-nums tabular-nums; }
+.cms-stat .v { font-family: var(--font-display); font-weight: 600; font-size: 3rem; line-height: 1; color: var(--color-ink); font-variant-numeric: lining-nums tabular-nums; }
 .cms-stat .l { color: var(--color-muted); margin-top: 0.35rem; }

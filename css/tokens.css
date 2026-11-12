@@ -1,4 +1,4 @@
-/* Hallmark · v2.0.0 · theme: editorial (deal: manual) · genre: editorial · redesign: restyle · scope: site (web, app, cms) · signature: the TrailWatch forest green as the one printer's ink on warm uncoated paper */
+/* Hallmark · v2.0.0 · theme: editorial (deal: manual; display face swapped to Hanken Grotesk 600 by request) · genre: editorial · redesign: restyle · scope: site (web, app, cms) · signature: the TrailWatch forest green as the one printer's ink on warm uncoated paper */
 /* Hallmark · critique: a template-green SaaS skin (Inter, pills, soft shadows, mint wash, gradients, tracked caps) becomes a field-guide print system: condensed heads, serif reading text, square corners, ink rules */
 /* Hallmark · keeps: every page, link, form, field, id, script and route · the brand green and logo · layout unchanged (restyle depth) */
 
@@ -32,12 +32,12 @@
   --color-sky-wash: oklch(95% 0.020 240);
 
   /* Type */
-  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Source Serif 4", ui-serif, Georgia, serif;
-  --font-ui: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-ui: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
-  --display-weight: 800;
-  --tracking-display: -0.012em;
+  --display-weight: 600;
+  --tracking-display: -0.015em;
 
   /* Surfaces */
   --rule-hair: 1px;
@@ -92,7 +92,6 @@
   font-family: var(--font-ui);
   font-size: var(--text-sm);
   font-weight: 500;
-  font-variation-settings: "opsz" 12;
   background: transparent;
   border: 1px solid var(--color-rule-2);
   color: var(--color-ink-2);

@@ -1,5 +1,5 @@
 /* TrailWatch HK — Design System */
-@import url("tokens.css");
+@import url("tokens.css?v=hk20261112b");
 
 *,
 *::before,
@@ -7439,12 +7439,11 @@ body {
 }
 ::selection { background: color-mix(in oklab, var(--color-accent) 22%, transparent); }
 
-/* Heads: condensed Bricolage, one weight, one colour */
+/* Heads: Hanken Grotesk semibold, one weight, one colour */
 h1, h2, h3,
 .page-title, .hero h1, .section-head h2 {
   font-family: var(--font-display);
   font-weight: var(--display-weight);
-  font-variation-settings: "wdth" 75, "opsz" 96;
   letter-spacing: var(--tracking-display);
   font-style: normal;
   color: var(--color-ink);
@@ -7455,11 +7454,10 @@ h1, h2, h3,
 h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-variation-settings: "wdth" 85, "opsz" 24;
   color: var(--color-ink);
 }
-.hero h1 { color: var(--color-sheet); line-height: 0.95; }
-.page-title { font-size: clamp(2rem, 3.4vw, 2.75rem); line-height: 1; }
+.hero h1 { color: var(--color-sheet); line-height: 1.05; }
+.page-title { font-size: clamp(1.9rem, 3vw, 2.5rem); line-height: 1.1; }
 
 /* Reading text in the serif */
 p, .lede, .home-themes-lede, .article-body, .article-content, .prose, .legal-body, blockquote, figcaption {
@@ -7474,7 +7472,7 @@ blockquote { font-style: italic; }
   padding-top: 0.75rem;
   align-items: baseline;
 }
-.section-head h2 { font-size: clamp(1.6rem, 2.4vw, 2.1rem); line-height: 1; color: var(--color-ink); }
+.section-head h2 { font-size: clamp(1.5rem, 2.2vw, 1.9rem); line-height: 1.1; color: var(--color-ink); }
 
 /* Links */
 .link-more {
@@ -7500,7 +7498,6 @@ blockquote { font-style: italic; }
 .btn {
   font-family: var(--font-ui);
   font-weight: 600;
-  font-variation-settings: "opsz" 12;
   min-height: 44px;
   border: var(--rule-hair) solid var(--color-ink);
   transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
@@ -7519,7 +7516,6 @@ blockquote { font-style: italic; }
 /* Tags: plain label face, the green rectangle is the one filled tag */
 .tag, .badge, [class*="-tag"], [class*="-pill"] {
   font-family: var(--font-ui);
-  font-variation-settings: "opsz" 12;
   letter-spacing: normal;
   text-transform: none;
 }
