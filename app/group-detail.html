@@ -6,37 +6,37 @@
   <title>TrailWatch App — Group Hike Detail</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="../css/styles.css" />
   <style>
     body { margin: 0; }
     .phone-screen { display: flex; flex-direction: column; height: 100%; }
-    .phone-body { flex: 1; overflow-y: auto; padding: 0.75rem 0.9rem 1rem; background: #f7faf7; min-height: 0; }
+    .phone-body { flex: 1; overflow-y: auto; padding: 0.75rem 0.9rem 1rem; background: var(--color-sheet); min-height: 0; }
     .app-detail-bar {
       display: flex; align-items: center; gap: 0.35rem;
-      padding: 2.35rem 0.65rem 0.45rem; background: #fff; border-bottom: 1px solid var(--border);
+      padding: 2.35rem 0.65rem 0.45rem; background: var(--color-sheet); border-bottom: 1px solid var(--border);
       flex-shrink: 0;
     }
     .app-detail-bar h1 {
-      flex: 1; font-size: 0.95rem; margin: 0; text-align: center; color: #111;
+      flex: 1; font-size: 0.95rem; margin: 0; text-align: center; color: var(--color-ink);
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
     .app-detail-bar .ib {
       width: 36px; height: 36px; border: none; background: none; cursor: pointer;
-      font-size: 1.25rem; color: #111; display: grid; place-items: center; text-decoration: none;
+      font-size: 1.25rem; color: var(--color-ink); display: grid; place-items: center; text-decoration: none;
       flex-shrink: 0;
     }
     .gh-badge {
       display: inline-block; font-size: 0.62rem; font-weight: 700;
-      padding: 0.15rem 0.45rem; border-radius: 4px; margin: 0 0.35rem 0.35rem 0;
+      padding: 0.15rem 0.45rem; border-radius: 0; margin: 0 0.35rem 0.35rem 0;
     }
-    .gh-public { background: #ecfdf5; color: #047857; }
-    .gh-private { background: #eff6ff; color: #1d4ed8; }
-    .gh-host { background: #fef3c7; color: #92400e; }
+    .gh-public { background: var(--color-paper); color: var(--color-accent-2); }
+    .gh-private { background: var(--color-sky-wash); color: var(--color-sky); }
+    .gh-host { background: var(--color-signal-wash); color: var(--color-signal-ink); }
     #ghMap {
-      height: 200px; border-radius: 12px; border: 1px solid var(--border);
-      margin-bottom: 0.75rem; background: #e8ece8;
+      height: 200px; border-radius: 0; border: 1px solid var(--border);
+      margin-bottom: 0.75rem; background: var(--color-paper-2);
     }
     .gh-field { margin-bottom: 0.65rem; }
     .gh-field:last-child { margin-bottom: 0; }
@@ -49,7 +49,7 @@
     }
     .gh-field-value.desc { font-weight: 400; white-space: pre-wrap; }
     .block {
-      background: #fff; border: 1px solid var(--border); border-radius: 12px;
+      background: var(--color-sheet); border: 1px solid var(--border); border-radius: 0;
       padding: 0.75rem 0.85rem; margin-bottom: 0.65rem;
     }
     .block h2 { margin: 0 0 0.45rem; font-size: 0.82rem; color: var(--green-900); }
@@ -73,9 +73,9 @@
   <div class="app-page">
     <div class="app-page-top">
       <a href="hikes.html" id="backWeb"></a>
-      <div class="lang-switch" style="margin:0.75rem auto 0;width:fit-content;background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.25)">
-        <button type="button" data-lang="en" style="color:#fff">EN</button>
-        <button type="button" data-lang="zh" style="color:#fff">繁</button>
+      <div class="lang-switch" style="margin:0.75rem auto 0;width:fit-content;background:color-mix(in oklab, var(--color-sheet) 15%, transparent);border-color:color-mix(in oklab, var(--color-sheet) 25%, transparent)">
+        <button type="button" data-lang="en" style="color:var(--color-sheet)">EN</button>
+        <button type="button" data-lang="zh" style="color:var(--color-sheet)">繁</button>
       </div>
     </div>
 

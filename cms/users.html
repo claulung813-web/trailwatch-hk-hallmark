@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CMS — User management</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/cms.css" />
 </head>
 <body class="cms-body">
@@ -381,7 +381,7 @@
       document.getElementById("activityList").innerHTML = items
         .map(
           (it) => `
-        <label style="display:flex;gap:0.5rem;align-items:flex-start;padding:0.4rem 0;border-bottom:1px solid #eee;font-size:0.85rem">
+        <label style="display:flex;gap:0.5rem;align-items:flex-start;padding:0.4rem 0;border-bottom:1px solid var(--color-paper-2);font-size:0.85rem">
           <input type="radio" name="actPick" value="${esc(it.routeId || it.id)}" data-title="${esc(it.title)}" />
           <span><strong>${esc(it.title)}</strong><br/>
           <span class="cms-muted">${esc(it.kind)} · ${esc(String(it.when).slice(0, 16))}</span></span>

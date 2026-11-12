@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CMS — Activity tags</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/cms.css" />
 </head>
 <body class="cms-body">
@@ -56,7 +56,7 @@
       document.getElementById("tagList").innerHTML = tags
         .map(
           (t, i) => `
-        <div class="cms-card" style="background:#f9fafb;margin-top:0.65rem" data-i="${i}">
+        <div class="cms-card" style="background:var(--color-sheet);margin-top:0.65rem" data-i="${i}">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;flex-wrap:wrap">
             <strong>Tag ${i + 1}</strong>
             <div style="display:flex;gap:0.35rem">
@@ -73,7 +73,7 @@
           </div>
         </div>`
         )
-        .join("") || '<p style="color:#6b7280;margin-top:0.75rem">No tags. Add one or reset to defaults.</p>';
+        .join("") || '<p style="color:var(--color-muted);margin-top:0.75rem">No tags. Add one or reset to defaults.</p>';
 
       document.querySelectorAll("[data-f]").forEach((inp) => {
         inp.addEventListener("change", () => {

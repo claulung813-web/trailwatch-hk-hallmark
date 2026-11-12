@@ -6,7 +6,7 @@
   <title>Plan a route — TrailWatch HK</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/styles.css" />
   <style>
@@ -22,9 +22,9 @@
       gap: 0;
       min-height: min(78vh, 720px);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: 0;
       overflow: hidden;
-      background: #fff;
+      background: var(--color-sheet);
       position: relative;
     }
     .plan-map-pane {
@@ -46,7 +46,7 @@
       padding: 1rem 1.05rem 1.15rem;
       overflow-y: auto;
       max-height: min(78vh, 720px);
-      background: #fff;
+      background: var(--color-sheet);
     }
     .plan-panel-head {
       display: flex;
@@ -74,14 +74,14 @@
     .plan-legend span { display: inline-flex; align-items: center; gap: 0.3rem; }
     .plan-dot {
       width: 14px; height: 14px; border-radius: 50%;
-      border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+      border: 2px solid var(--color-sheet); box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-ink) 20%, transparent);
       display: inline-flex; align-items: center; justify-content: center;
-      font-size: 8px; font-weight: 800; color: #fff; line-height: 1;
+      font-size: 8px; font-weight: 800; color: var(--color-sheet); line-height: 1;
     }
-    .plan-dot.start { background: #2d8a45; }
-    .plan-dot.end { background: #d64545; border-radius: 3px; }
-    .plan-dot.via { background: #003229; box-shadow: 0 0 0 2px #33897a; }
-    .plan-dot.poi { background: #f1a637; }
+    .plan-dot.start { background: var(--color-accent-2); }
+    .plan-dot.end { background: var(--color-danger); border-radius: 3px; }
+    .plan-dot.via { background: var(--color-accent); box-shadow: 0 0 0 2px var(--color-accent-2); }
+    .plan-dot.poi { background: var(--color-signal); }
     .plan-stats {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -90,7 +90,7 @@
     .plan-stat {
       background: var(--green-50);
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 0;
       padding: 0.45rem 0.55rem;
     }
     .plan-stat .lbl {
@@ -121,9 +121,9 @@
     .plan-panel-actions .btn-primary { flex: 1.2 1 auto; }
     .plan-via-panel {
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 0;
       padding: 0.65rem 0.75rem 0.45rem;
-      background: #fff;
+      background: var(--color-sheet);
     }
     .plan-via-panel h3 {
       font-size: 0.82rem;
@@ -140,7 +140,7 @@
       align-items: center;
       gap: 0.4rem;
       padding: 0.35rem 0.2rem;
-      border-bottom: 1px solid #f4f4f5;
+      border-bottom: 1px solid var(--color-paper);
       font-size: 0.78rem;
     }
     .plan-via-seq li:last-child { border-bottom: 0; }
@@ -151,7 +151,7 @@
       font-variant-numeric: tabular-nums;
     }
     .plan-via-seq .via-grip {
-      color: #a1a1aa;
+      color: var(--color-rule-2);
       cursor: grab;
       font-size: 0.7rem;
       letter-spacing: -0.1em;
@@ -160,8 +160,8 @@
       width: 26px;
       height: 26px;
       border: 1px solid var(--border);
-      background: #fff;
-      border-radius: 6px;
+      background: var(--color-sheet);
+      border-radius: 0;
       cursor: pointer;
       font-weight: 700;
       color: var(--green-900);
@@ -177,10 +177,10 @@
       position: absolute;
       z-index: 1000;
       min-width: 230px;
-      background: #fff;
-      border-radius: 12px;
+      background: var(--color-sheet);
+      border-radius: 0;
       padding: 0.85rem 1rem 0.75rem;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+      box-shadow: none;
       display: none;
     }
     .plan-ctx button {
@@ -194,13 +194,13 @@
       padding: 0.45rem 0.15rem;
       font-weight: 700;
       font-size: 0.92rem;
-      color: #3f3f46;
+      color: var(--color-ink-2);
       cursor: pointer;
     }
     .plan-ctx button:hover { color: var(--green-900); }
     .plan-ctx hr {
       border: 0;
-      border-top: 1px solid #f4f4f5;
+      border-top: 1px solid var(--color-paper);
       margin: 0.55rem 0;
     }
     .plan-ctx .cancel {
@@ -210,32 +210,32 @@
     }
     .marker-label { background: transparent !important; border: 0 !important; }
     .mk {
-      border: 2px solid #fff;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.35);
+      border: 2px solid var(--color-sheet);
+      box-shadow: none;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      color: #fff;
+      color: var(--color-sheet);
       line-height: 1;
     }
     .mk-start {
       width: 24px; height: 24px; border-radius: 50%;
-      background: #2d8a45; font-size: 11px;
+      background: var(--color-accent-2); font-size: 11px;
     }
     .mk-end {
-      width: 24px; height: 24px; border-radius: 4px;
-      background: #d64545; font-size: 11px;
+      width: 24px; height: 24px; border-radius: 0;
+      background: var(--color-danger); font-size: 11px;
     }
     .mk-via {
       width: 22px; height: 22px; border-radius: 50%;
-      background: #003229;
-      box-shadow: 0 0 0 2px #33897a, 0 1px 4px rgba(0,0,0,0.35);
+      background: var(--color-accent);
+      box-shadow: none;
       font-size: 10px;
     }
     .mk-poi {
-      width: 22px; height: 22px; border-radius: 50% 50% 50% 0;
-      background: #f1a637;
+      width: 22px; height: 22px; border-radius: 0;
+      background: var(--color-signal);
       transform: rotate(-45deg);
       font-size: 11px;
     }
@@ -244,19 +244,19 @@
     .leaflet-marker-draggable:active { cursor: grabbing; }
     .plan-line-handle {
       width: 14px; height: 14px; border-radius: 50%;
-      background: #fff; border: 2px solid #2563eb;
-      box-shadow: 0 1px 4px rgba(0,0,0,.25); cursor: grab;
+      background: var(--color-sheet); border: 2px solid var(--color-sky);
+      box-shadow: none; cursor: grab;
     }
     .plan-line-handle:active { cursor: grabbing; }
     .mk-poi-tip {
-      background: #fff;
+      background: var(--color-sheet);
       color: var(--green-900);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 0;
       padding: 0.15rem 0.4rem;
       font-size: 0.72rem;
       font-weight: 600;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      box-shadow: none;
     }
     .draft-list-item {
       display: flex;
@@ -265,9 +265,9 @@
       gap: 0.75rem;
       padding: 0.75rem 0.9rem;
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: 0;
       margin-bottom: 0.55rem;
-      background: #fff;
+      background: var(--color-sheet);
     }
     .draft-list-item strong { color: var(--green-900); }
     .draft-list-item .meta { font-size: 0.78rem; color: var(--text-muted); }
@@ -278,10 +278,10 @@
       width: 38px;
       height: 38px;
       border: none;
-      border-radius: 10px;
-      background: #fff;
+      border-radius: 0;
+      background: var(--color-sheet);
       color: var(--green-900);
-      box-shadow: 0 2px 10px rgba(0,0,0,.16);
+      box-shadow: none;
       cursor: pointer;
       display: grid;
       place-items: center;
@@ -332,7 +332,7 @@
       width: min(340px, 92vw);
       max-height: none;
       z-index: 600;
-      box-shadow: -8px 0 24px rgba(0,0,0,0.18);
+      box-shadow: none;
       transform: translateX(0);
       transition: transform 0.22s ease;
     }

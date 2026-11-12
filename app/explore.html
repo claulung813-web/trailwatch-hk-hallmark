@@ -6,35 +6,35 @@
   <title>TrailWatch App — Explore</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/styles.css?v=20260830a" />
   <style>
     body { margin: 0; }
-    .phone-body { flex: 1; overflow-y: auto; padding: 0.65rem 0.9rem 1rem; background: #f7faf7; }
+    .phone-body { flex: 1; overflow-y: auto; padding: 0.65rem 0.9rem 1rem; background: var(--color-sheet); }
     .app-head {
-      padding: 2.55rem 0.9rem 0.55rem; background: #fff; border-bottom: 1px solid var(--border);
+      padding: 2.55rem 0.9rem 0.55rem; background: var(--color-sheet); border-bottom: 1px solid var(--border);
     }
     .app-head h1 { font-size: 1.05rem; color: var(--green-900); margin: 0; }
     .tabs {
-      display: flex; gap: 0.35rem; padding: 0.55rem 0.9rem 0.35rem; background: #fff;
+      display: flex; gap: 0.35rem; padding: 0.55rem 0.9rem 0.35rem; background: var(--color-sheet);
       border-bottom: 1px solid var(--border); overflow-x: auto;
     }
     .tabs button {
-      border: none; border-radius: 999px; padding: 0.4rem 0.8rem;
+      border: none; border-radius: 0; padding: 0.4rem 0.8rem;
       font-size: 0.75rem; font-weight: 700; background: var(--green-50); color: var(--green-900);
       white-space: nowrap; cursor: pointer;
     }
-    .tabs button.active { background: var(--green-900); color: #fff; }
-    .subfilters { padding: 0 0.9rem 0.35rem; background: #fff; border-bottom: 1px solid var(--border); }
+    .tabs button.active { background: var(--green-900); color: var(--color-sheet); }
+    .subfilters { padding: 0 0.9rem 0.35rem; background: var(--color-sheet); border-bottom: 1px solid var(--border); }
     .subfilters[hidden] { display: none !important; }
     .phone-body .record-item.media-card { margin-bottom: 0.65rem; }
     .search-mini {
-      width: 100%; border: 1px solid var(--border); border-radius: 10px;
-      padding: 0.45rem 0.7rem; font-size: 0.8rem; background: #f7faf7;
+      width: 100%; border: 1px solid var(--border); border-radius: 0;
+      padding: 0.45rem 0.7rem; font-size: 0.8rem; background: var(--color-sheet);
     }
     .route-card {
-      display: flex; gap: 0.75rem; background: #fff; border: 1px solid var(--border);
-      border-radius: 12px; overflow: hidden; margin-bottom: 0.65rem; text-decoration: none; color: inherit;
+      display: flex; gap: 0.75rem; background: var(--color-sheet); border: 1px solid var(--border);
+      border-radius: 0; overflow: hidden; margin-bottom: 0.65rem; text-decoration: none; color: inherit;
     }
     .route-card img { width: 84px; height: 84px; object-fit: cover; flex-shrink: 0; background: var(--green-100); }
     .route-card .meta { padding: 0.5rem 0.5rem 0.5rem 0; min-width: 0; }
@@ -44,11 +44,11 @@
       display: inline-block; margin-top: 0.35rem; font-size: 0.72rem; font-weight: 800; color: var(--green-800);
     }
     .record-row {
-      background: #fff; border: 1px solid var(--border); border-radius: 12px;
+      background: var(--color-sheet); border: 1px solid var(--border); border-radius: 0;
       padding: 0.7rem 0.8rem; margin-bottom: 0.55rem;
     }
     .record-row strong { display: block; color: var(--green-900); font-size: 0.85rem; }
-    .inc-form { background:#fff; border:1px solid var(--border); border-radius:12px; padding:0.75rem; margin-bottom:0.85rem; }
+    .inc-form { background:var(--color-sheet); border:1px solid var(--border); border-radius:0; padding:0.75rem; margin-bottom:0.85rem; }
     .inc-form .form-group { margin-bottom:0.5rem; }
     .inc-form label { display:block; font-size:0.72rem; font-weight:700; color:var(--green-900); margin-bottom:0.2rem; }
     .filter-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.35rem; margin-top:0.4rem; }
@@ -60,9 +60,9 @@
   <div class="app-page">
     <div class="app-page-top">
       <a href="../get-app.html" id="backWeb"></a>
-      <div class="lang-switch" style="margin:0.75rem auto 0;width:fit-content;background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.25)">
-        <button type="button" data-lang="en" style="color:#fff">EN</button>
-        <button type="button" data-lang="zh" style="color:#fff">繁</button>
+      <div class="lang-switch" style="margin:0.75rem auto 0;width:fit-content;background:color-mix(in oklab, var(--color-sheet) 15%, transparent);border-color:color-mix(in oklab, var(--color-sheet) 25%, transparent)">
+        <button type="button" data-lang="en" style="color:var(--color-sheet)">EN</button>
+        <button type="button" data-lang="zh" style="color:var(--color-sheet)">繁</button>
       </div>
     </div>
 

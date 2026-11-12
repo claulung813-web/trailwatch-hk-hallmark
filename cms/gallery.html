@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CMS — Gallery featured</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/cms.css" />
   <style>
     .gal-pick-grid {
@@ -13,10 +13,10 @@
       gap: 0.75rem;
     }
     .gal-pick {
-      border: 2px solid #e5e7eb;
-      border-radius: 12px;
+      border: 2px solid var(--color-sky-wash);
+      border-radius: 0;
       overflow: hidden;
-      background: #fff;
+      background: var(--color-sheet);
       cursor: pointer;
       text-align: left;
       padding: 0;
@@ -24,15 +24,15 @@
       color: inherit;
     }
     .gal-pick.selected {
-      border-color: #2f6b4f;
-      box-shadow: 0 0 0 2px rgba(47, 107, 79, 0.25);
+      border-color: var(--color-accent-2);
+      box-shadow: none;
     }
     .gal-pick img {
       width: 100%;
       aspect-ratio: 1;
       object-fit: cover;
       display: block;
-      background: #ecf3ee;
+      background: var(--color-paper-2);
     }
     .gal-pick-body {
       padding: 0.55rem 0.65rem 0.7rem;
@@ -58,7 +58,7 @@
     <div class="gal-actions">
       <button type="button" class="cms-btn cms-btn-primary" id="saveFeatured">Save featured (max 10)</button>
       <a class="cms-btn cms-btn-secondary" href="../gallery.html" target="_blank">Preview Gallery ↗</a>
-      <span id="pickCount" style="font-size:0.85rem;color:#6b7280"></span>
+      <span id="pickCount" style="font-size:0.85rem;color:var(--color-muted)"></span>
     </div>
     <div class="gal-pick-grid" id="pickGrid"></div>
   </div>

@@ -6,7 +6,7 @@
   <title>Record Detail — TrailWatch HK</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/styles.css" />
   <style>
@@ -18,22 +18,22 @@
       flex: 1; font-size: 1.15rem; margin: 0; color: var(--green-900); text-align: center;
     }
     .rec-detail-head .icon-btn {
-      width: 40px; height: 40px; border: none; background: #f3f4f6; border-radius: 10px;
+      width: 40px; height: 40px; border: none; background: var(--color-paper); border-radius: 0;
       cursor: pointer; font-size: 1.1rem; color: var(--green-900);
     }
     #recMap {
-      height: 280px; border-radius: 14px; border: 1px solid var(--border);
+      height: 280px; border-radius: 0; border: 1px solid var(--border);
       position: relative; z-index: 1;
     }
     .rec-map-wrap { position: relative; margin-bottom: 1rem; }
     .rec-expand {
       position: absolute; top: 0.65rem; right: 0.65rem; z-index: 500;
-      width: 36px; height: 36px; border-radius: 8px; border: none; background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,.15); cursor: pointer; font-size: 0.95rem;
+      width: 36px; height: 36px; border-radius: 0; border: none; background: var(--color-sheet);
+      box-shadow: none; cursor: pointer; font-size: 0.95rem;
     }
     .rec-card {
-      background: #fff; border: 1px solid var(--border); border-radius: 16px;
-      padding: 1rem 1.1rem 1.15rem; box-shadow: 0 2px 12px rgba(0,0,0,.04);
+      background: var(--color-sheet); border: 1px solid var(--border); border-radius: 0;
+      padding: 1rem 1.1rem 1.15rem; box-shadow: none;
     }
     .rec-user-row {
       display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1rem;
@@ -42,22 +42,22 @@
       width: 44px; height: 44px; flex-shrink: 0;
     }
     .rec-user-meta { flex: 1; min-width: 0; }
-    .rec-user-meta .name { font-weight: 800; color: #111; font-size: 0.95rem; }
+    .rec-user-meta .name { font-weight: 800; color: var(--color-ink); font-size: 0.95rem; }
     .rec-user-meta .date { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.1rem; }
-    .rec-rating { font-weight: 700; color: #111; font-size: 0.95rem; white-space: nowrap; }
-    .rec-rating .star { color: #e8b923; margin-right: 0.15rem; }
+    .rec-rating { font-weight: 700; color: var(--color-ink); font-size: 0.95rem; white-space: nowrap; }
+    .rec-rating .star { color: var(--color-signal); margin-right: 0.15rem; }
     .rec-stats-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem 0.5rem;
     }
-    .rec-stat .ico { font-size: 0.85rem; color: #9ca3af; margin-bottom: 0.15rem; }
-    .rec-stat .val { font-size: 0.95rem; font-weight: 800; color: #111; }
+    .rec-stat .ico { font-size: 0.85rem; color: var(--color-rule-2); margin-bottom: 0.15rem; }
+    .rec-stat .val { font-size: 0.95rem; font-weight: 800; color: var(--color-ink); }
     .rec-stat .lbl { font-size: 0.68rem; color: var(--text-muted); font-weight: 600; margin-top: 0.1rem; }
     .rec-card-foot {
       display: flex; justify-content: flex-end; margin-top: 1rem;
     }
     .rec-group-btn {
       display: inline-flex; align-items: center; gap: 0.25rem;
-      background: var(--green-900); color: #fff; border: none; border-radius: 10px;
+      background: var(--green-900); color: var(--color-sheet); border: none; border-radius: 0;
       padding: 0.55rem 1rem; font-weight: 700; font-size: 0.85rem; text-decoration: none;
     }
     .rec-photos { margin-top: 1.25rem; }
@@ -66,8 +66,8 @@
       display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem;
     }
     .rec-photo-grid img {
-      width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px;
-      border: 1px solid var(--border); background: #f3f4f6;
+      width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0;
+      border: 1px solid var(--border); background: var(--color-paper);
     }
   </style>
 </head>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CMS — Recommended Trails</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/cms.css" />
 </head>
@@ -75,13 +75,13 @@
             <label><input type="checkbox" id="published" checked /> Published on frontend</label>
             <label><input type="checkbox" id="featured" /> Featured recommendation</label>
           </div>
-          <p style="font-size:0.8rem;color:#6b7280;margin:0.75rem 0 0.35rem">
+          <p style="font-size:0.8rem;color:var(--color-muted);margin:0.75rem 0 0.35rem">
             <strong>Map:</strong> click to add points along the trail. Clear to reset.
           </p>
           <div class="cms-toolbar">
             <button type="button" class="cms-btn cms-btn-secondary cms-btn-sm" id="clearPath">Clear path</button>
             <button type="button" class="cms-btn cms-btn-secondary cms-btn-sm" id="undoPoint">Undo point</button>
-            <span id="pathCount" style="font-size:0.8rem;color:#6b7280">0 points</span>
+            <span id="pathCount" style="font-size:0.8rem;color:var(--color-muted)">0 points</span>
           </div>
           <div id="trailMap" class="cms-map cms-map--edit"></div>
           <div class="cms-toolbar" style="margin-top:0.75rem">
@@ -405,7 +405,7 @@
             ? '<span class="cms-badge pub">Published</span>'
             : '<span class="cms-badge draft">Draft</span>';
           return `<tr>
-            <td><strong>${r.title}</strong><br/><span style="color:#6b7280;font-size:0.75rem">${r.titleZh || ""}</span></td>
+            <td><strong>${r.title}</strong><br/><span style="color:var(--color-muted);font-size:0.75rem">${r.titleZh || ""}</span></td>
             <td>${cats}${r.featured ? " · ★" : ""}</td>
             <td>${badge}</td>
             <td>

@@ -4,29 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CMS — Badges</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/cms.css" />
   <style>
     .cms-tabs { display: flex; gap: 0.35rem; margin-bottom: 1rem; flex-wrap: wrap; }
     .cms-tabs button {
-      border: 1px solid #d1d5db; background: #fff; border-radius: 8px;
+      border: 1px solid var(--color-rule); background: var(--color-sheet); border-radius: 0;
       padding: 0.45rem 0.85rem; font: inherit; cursor: pointer; font-weight: 600;
     }
-    .cms-tabs button.active { background: #0b421a; color: #fff; border-color: #0b421a; }
+    .cms-tabs button.active { background: var(--color-accent); color: var(--color-sheet); border-color: var(--color-accent); }
     .cms-cat-tabs { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 0.85rem; }
     .cms-cat-tabs button {
-      border: 1px solid #d1d5db; background: #f9fafb; border-radius: 999px;
+      border: 1px solid var(--color-rule); background: var(--color-sheet); border-radius: 0;
       padding: 0.35rem 0.75rem; font: inherit; cursor: pointer; font-size: 0.85rem;
     }
-    .cms-cat-tabs button.active { background: #dcfce7; border-color: #166534; color: #166534; font-weight: 700; }
+    .cms-cat-tabs button.active { background: var(--color-accent-wash); border-color: var(--color-accent-2); color: var(--color-accent-2); font-weight: 700; }
     .badge-preview {
-      width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center;
+      width: 40px; height: 40px; border-radius: 0; display: grid; place-items: center;
       font-size: 1.25rem; overflow: hidden; flex-shrink: 0;
     }
     .badge-preview img { width: 100%; height: 100%; object-fit: cover; }
-    .series-card { background: #f9fafb; margin-top: 0.75rem; }
-    .badge-editor { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 0.75rem; margin-top: 0.65rem; }
-    .gps-hint { font-size: 0.75rem; color: #6b7280; margin: 0.25rem 0 0.5rem; }
+    .series-card { background: var(--color-sheet); margin-top: 0.75rem; }
+    .badge-editor { background: var(--color-sheet); border: 1px solid var(--color-sky-wash); border-radius: 0; padding: 0.75rem; margin-top: 0.65rem; }
+    .gps-hint { font-size: 0.75rem; color: var(--color-muted); margin: 0.25rem 0 0.5rem; }
     .row-actions { display: flex; gap: 0.35rem; flex-wrap: wrap; }
     .cms-form.inline-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 0.75rem;

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CMS — Feedback</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/cms.css" />
 </head>
 <body class="cms-body">
@@ -30,8 +30,8 @@
       </div>
       <div class="cms-card" id="detailPanel" style="display:none;flex:1">
         <h3 style="margin-top:0" id="dSubject">—</h3>
-        <p style="font-size:0.8rem;color:#6b7280" id="dMeta"></p>
-        <p style="font-size:0.95rem;color:#374151;white-space:pre-wrap" id="dMessage"></p>
+        <p style="font-size:0.8rem;color:var(--color-muted)" id="dMeta"></p>
+        <p style="font-size:0.95rem;color:var(--color-ink-2);white-space:pre-wrap" id="dMessage"></p>
         <form class="cms-form" id="fbForm">
           <input type="hidden" id="fbId" />
           <label>Status</label>
@@ -82,7 +82,7 @@
         <tr>
           <td>
             <strong>${f.subject || "(No subject)"}</strong><br/>
-            <span style="font-size:0.75rem;color:#6b7280">${f.name || "—"} · ${f.email || ""}</span>
+            <span style="font-size:0.75rem;color:var(--color-muted)">${f.name || "—"} · ${f.email || ""}</span>
           </td>
           <td><span class="cms-badge ${badge(f.status)}">${CMS.statusLabel(f.status, "feedback")}</span></td>
           <td><button class="cms-btn cms-btn-secondary cms-btn-sm" data-open="${f.id}">Open</button></td>

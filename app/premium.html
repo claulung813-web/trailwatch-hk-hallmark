@@ -6,26 +6,26 @@
   <title>TrailWatch App — Premium</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/styles.css" />
   <style>
     body { margin: 0; }
     .phone-body {
-      flex: 1; overflow-y: auto; background: #f7faf7; min-height: 0;
+      flex: 1; overflow-y: auto; background: var(--color-sheet); min-height: 0;
       padding: 0.75rem 0.9rem calc(1rem + env(safe-area-inset-bottom, 0px));
     }
     .app-detail-bar {
       display: flex; align-items: center; gap: 0.35rem;
-      padding: 2.35rem 0.65rem 0.55rem; background: #fff; border-bottom: 1px solid var(--border);
+      padding: 2.35rem 0.65rem 0.55rem; background: var(--color-sheet); border-bottom: 1px solid var(--border);
       flex-shrink: 0;
     }
     .app-detail-bar h1 {
-      flex: 1; font-size: 0.95rem; margin: 0; text-align: center; color: #111;
+      flex: 1; font-size: 0.95rem; margin: 0; text-align: center; color: var(--color-ink);
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
     .app-detail-bar .ib {
       width: 36px; height: 36px; border: none; background: none; cursor: pointer;
-      font-size: 1.25rem; color: #111; display: grid; place-items: center; text-decoration: none;
+      font-size: 1.25rem; color: var(--color-ink); display: grid; place-items: center; text-decoration: none;
       flex-shrink: 0;
     }
     .premium-page { padding-bottom: 0.5rem; }
@@ -50,9 +50,9 @@
   <div class="app-page">
     <div class="app-page-top">
       <a href="profile.html" id="backWeb"></a>
-      <div class="lang-switch" style="margin:0.75rem auto 0;width:fit-content;background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.25)">
-        <button type="button" data-lang="en" style="color:#fff">EN</button>
-        <button type="button" data-lang="zh" style="color:#fff">繁</button>
+      <div class="lang-switch" style="margin:0.75rem auto 0;width:fit-content;background:color-mix(in oklab, var(--color-sheet) 15%, transparent);border-color:color-mix(in oklab, var(--color-sheet) 25%, transparent)">
+        <button type="button" data-lang="en" style="color:var(--color-sheet)">EN</button>
+        <button type="button" data-lang="zh" style="color:var(--color-sheet)">繁</button>
       </div>
     </div>
     <div class="phone-frame">
@@ -79,7 +79,7 @@
             <div class="premium-coupon-row card" style="padding:0.85rem 0.9rem;margin-bottom:0.5rem">
               <div class="form-group" style="margin:0;flex:1;min-width:140px;width:100%">
                 <label for="couponCode" id="couponLabel"></label>
-                <input class="form-input" id="couponCode" type="text" autocomplete="off" spellcheck="false" style="text-transform:uppercase" />
+                <input class="form-input" id="couponCode" type="text" autocomplete="off" spellcheck="false" style="text-transform:none" />
               </div>
               <button type="button" class="btn btn-secondary btn-block" id="btnApplyCoupon"></button>
             </div>

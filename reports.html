@@ -6,7 +6,7 @@
   <title>Incident Reports — TrailWatch HK</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/styles.css?v=20260828d" />
 </head>
@@ -166,7 +166,7 @@
         if (r.lat == null || r.lng == null) return;
         const icon = L.divIcon({
           className: "",
-          html: `<div style="background:#d64545;color:white;padding:4px 8px;border-radius:8px;font-weight:700;font-size:12px;box-shadow:0 2px 8px rgba(0,0,0,.25)">⚠</div>`,
+          html: `<div style="background:var(--color-danger);color:var(--color-sheet);padding:4px 8px;border-radius:0;font-weight:700;font-size:12px;box-shadow:none">⚠</div>`,
           iconSize: [28, 28],
           iconAnchor: [14, 14],
         });

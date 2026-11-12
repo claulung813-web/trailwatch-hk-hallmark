@@ -6,7 +6,7 @@
     <title>Join — TrailWatch HK</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/styles.css" />
   <style>
@@ -27,7 +27,7 @@
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--green-900);
-      background: #fff;
+      background: var(--color-sheet);
     }
     .vis-toggle input:disabled + span {
       opacity: 0.45;
@@ -43,8 +43,8 @@
       gap: 0.65rem;
       padding: 0.55rem 0.7rem;
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: #fff;
+      border-radius: 0;
+      background: var(--color-sheet);
       cursor: pointer;
       font-size: 0.88rem;
     }
@@ -53,15 +53,15 @@
       font-size: 0.68rem;
       font-weight: 700;
       padding: 0.15rem 0.45rem;
-      border-radius: 4px;
+      border-radius: 0;
       margin-right: 0.35rem;
     }
-    .gh-public { background: #ecfdf5; color: #047857; }
-    .gh-private { background: #eff6ff; color: #1d4ed8; }
-    .gh-invited { background: #fef3c7; color: #92400e; }
+    .gh-public { background: var(--color-paper); color: var(--color-accent-2); }
+    .gh-private { background: var(--color-sky-wash); color: var(--color-sky); }
+    .gh-invited { background: var(--color-signal-wash); color: var(--color-signal-ink); }
     #ghRouteMap {
       height: 300px;
-      border-radius: var(--radius);
+      border-radius: 0;
       border: 1px solid var(--border);
       background: var(--green-50);
     }
@@ -74,7 +74,7 @@
     }
     .gh-route-toolbar .chip.active {
       background: var(--green-900);
-      color: #fff;
+      color: var(--color-sheet);
       border-color: var(--green-900);
     }
     .gh-route-row {
@@ -107,7 +107,7 @@
     }
     .gh-route-mode .chip.active {
       background: var(--green-900);
-      color: #fff;
+      color: var(--color-sheet);
       border-color: var(--green-900);
     }
     .gh-route-stats {
@@ -122,7 +122,7 @@
     .gh-stat {
       background: var(--green-50);
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 0;
       padding: 0.45rem 0.55rem;
     }
     .gh-stat .lbl {
@@ -151,10 +151,10 @@
       position: absolute;
       z-index: 1000;
       min-width: 210px;
-      background: #fff;
-      border-radius: 12px;
+      background: var(--color-sheet);
+      border-radius: 0;
       padding: 0.75rem 0.9rem 0.65rem;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+      box-shadow: none;
       display: none;
     }
     .plan-ctx button {
@@ -168,34 +168,34 @@
       padding: 0.4rem 0.1rem;
       font-weight: 700;
       font-size: 0.88rem;
-      color: #3f3f46;
+      color: var(--color-ink-2);
       cursor: pointer;
     }
     .plan-ctx button:hover { color: var(--green-900); }
     .plan-ctx button[hidden] { display: none; }
-    .plan-ctx hr { border: 0; border-top: 1px solid #f4f4f5; margin: 0.45rem 0; }
+    .plan-ctx hr { border: 0; border-top: 1px solid var(--color-paper); margin: 0.45rem 0; }
     .plan-ctx .cancel { font-weight: 500; color: var(--text-muted); }
     .plan-dot {
       width: 14px; height: 14px; border-radius: 50%;
-      border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+      border: 2px solid var(--color-sheet); box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-ink) 20%, transparent);
       display: inline-flex; align-items: center; justify-content: center;
-      font-size: 8px; font-weight: 800; color: #fff; line-height: 1;
+      font-size: 8px; font-weight: 800; color: var(--color-sheet); line-height: 1;
     }
-    .plan-dot.start { background: #2d8a45; }
-    .plan-dot.end { background: #d64545; border-radius: 3px; }
-    .plan-dot.via { background: #003229; box-shadow: 0 0 0 2px #33897a; }
+    .plan-dot.start { background: var(--color-accent-2); }
+    .plan-dot.end { background: var(--color-danger); border-radius: 3px; }
+    .plan-dot.via { background: var(--color-accent); box-shadow: 0 0 0 2px var(--color-accent-2); }
     .marker-label { background: transparent !important; border: 0 !important; }
     .mk {
-      border: 2px solid #fff;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.35);
+      border: 2px solid var(--color-sheet);
+      box-shadow: none;
       display: flex; align-items: center; justify-content: center;
-      font-weight: 800; color: #fff; line-height: 1;
+      font-weight: 800; color: var(--color-sheet); line-height: 1;
     }
-    .mk-start { width: 24px; height: 24px; border-radius: 50%; background: #2d8a45; font-size: 11px; }
-    .mk-end { width: 24px; height: 24px; border-radius: 4px; background: #d64545; font-size: 11px; }
+    .mk-start { width: 24px; height: 24px; border-radius: 50%; background: var(--color-accent-2); font-size: 11px; }
+    .mk-end { width: 24px; height: 24px; border-radius: 0; background: var(--color-danger); font-size: 11px; }
     .mk-via {
       width: 22px; height: 22px; border-radius: 50%;
-      background: #003229; box-shadow: 0 0 0 2px #33897a, 0 1px 4px rgba(0,0,0,0.35);
+      background: var(--color-accent); box-shadow: none;
       font-size: 10px;
     }
     .page-groups .trail-grid .trail-card {

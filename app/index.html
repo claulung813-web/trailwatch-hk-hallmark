@@ -6,7 +6,7 @@
   <title>TrailWatch App — Map</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="icon" href="../assets/brand/icon.svg" type="image/svg+xml" />
@@ -25,9 +25,9 @@
     }
     .phone-topbar > * { pointer-events: auto; }
     .mode-toggle {
-      display: flex; background: #fff; border-radius: 999px;
-      box-shadow: 0 2px 12px rgba(0,0,0,.14); padding: 0.2rem; gap: 0.15rem;
-      border: 1px solid rgba(11, 66, 26, 0.08);
+      display: flex; background: var(--color-sheet); border-radius: 999px;
+      box-shadow: 0 2px 12px color-mix(in oklab, var(--color-ink) 14%, transparent); padding: 0.2rem; gap: 0.15rem;
+      border: 1px solid color-mix(in oklab, var(--color-accent) 8%, transparent);
     }
     .mode-toggle button {
       border: none; background: transparent; border-radius: 999px;
@@ -35,30 +35,30 @@
       color: var(--text-muted); cursor: pointer; min-width: 4.6rem;
     }
     .mode-toggle button.active {
-      background: var(--green-900); color: #fff;
-      box-shadow: 0 2px 8px rgba(11, 66, 26, 0.28);
+      background: var(--green-900); color: var(--color-sheet);
+      box-shadow: 0 2px 8px color-mix(in oklab, var(--color-accent) 28%, transparent);
     }
     .round-btn {
-      width: 42px; height: 42px; border-radius: 50%; background: #fff;
-      box-shadow: 0 2px 12px rgba(0,0,0,.2); display: grid; place-items: center;
-      color: #111; text-decoration: none; z-index: 30; position: relative;
+      width: 42px; height: 42px; border-radius: 50%; background: var(--color-sheet);
+      box-shadow: none; display: grid; place-items: center;
+      color: var(--color-ink); text-decoration: none; z-index: 30; position: relative;
       border: none; cursor: pointer; padding: 0; flex-shrink: 0;
     }
     .round-btn svg {
-      width: 20px; height: 20px; stroke: #111; fill: none;
+      width: 20px; height: 20px; stroke: var(--color-ink); fill: none;
       stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;
     }
     .gps-pill {
-      background: white; border-radius: 999px; padding: 0.38rem 0.65rem;
+      background: var(--color-sheet); border-radius: 0; padding: 0.38rem 0.65rem;
       font-size: 0.72rem; font-weight: 800; color: var(--green-900);
-      box-shadow: 0 2px 10px rgba(0,0,0,.12);
+      box-shadow: none;
       display: inline-flex; align-items: center; gap: 0.35rem;
       flex-shrink: 0;
     }
     .gps-pill .gps-signal {
       width: 8px; height: 8px; border-radius: 50%;
       background: var(--green-500); flex-shrink: 0;
-      box-shadow: 0 0 0 2px rgba(61, 168, 85, 0.28);
+      box-shadow: none;
     }
     .gps-pill #gpsText { font-weight: 700; white-space: nowrap; }
     .map-tools-stack {
@@ -66,28 +66,28 @@
       display: flex; flex-direction: column; gap: 0.45rem; align-items: center;
     }
     .map-tools-stack .ctrl {
-      width: 42px; height: 42px; border-radius: 50%; background: #fff;
-      box-shadow: 0 2px 12px rgba(0,0,0,.18); display: grid; place-items: center;
+      width: 42px; height: 42px; border-radius: 50%; background: var(--color-sheet);
+      box-shadow: none; display: grid; place-items: center;
       color: var(--green-900); border: none; cursor: pointer; padding: 0;
     }
     .map-tools-stack .ctrl svg { display: block; }
     .map-tools-stack .ctrl-report {
-      background: #e84a3c; color: #fff;
-      box-shadow: 0 4px 14px rgba(232, 74, 60, 0.38);
+      background: var(--color-danger); color: var(--color-sheet);
+      box-shadow: none;
     }
     .phone-screen.track-focus .app-bottom-nav { display: grid; }
     .figma-start-bar {
       padding: 0.75rem 1.1rem 1.1rem !important;
-      align-items: flex-end; gap: 0.5rem; background: #fff; border-radius: 0;
+      align-items: flex-end; gap: 0.5rem; background: var(--color-sheet); border-radius: 0;
     }
     .start-bar-spacer { width: 56px; flex-shrink: 0; }
     .figma-start {
       flex-direction: column; gap: 0.35rem; background: transparent !important;
-      color: #1a1a1a !important; max-width: none; padding: 0; font-size: 0.8rem; font-weight: 600;
+      color: var(--color-ink) !important; max-width: none; padding: 0; font-size: 0.8rem; font-weight: 600;
     }
     .figma-start-pill {
-      width: 88px; height: 52px; border-radius: 999px; background: var(--green-900);
-      display: grid; place-items: center; box-shadow: 0 4px 14px rgba(11, 66, 26, 0.35);
+      width: 88px; height: 52px; border-radius: 0; background: var(--green-900);
+      display: grid; place-items: center; box-shadow: none;
     }
     .figma-start:hover .figma-start-pill { background: var(--green-800); }
     .figma-sheet {
@@ -99,25 +99,25 @@
     .auto-pause-toggle {
       display: flex; align-items: flex-start; gap: 0.55rem;
       margin: 0.35rem 0 0.65rem; padding: 0.55rem 0.65rem;
-      background: #f3f6f3; border-radius: 10px; cursor: pointer;
+      background: var(--color-paper); border-radius: 10px; cursor: pointer;
       font-size: 0.78rem; color: var(--green-900); line-height: 1.35;
     }
     .auto-pause-toggle input { margin-top: 0.15rem; flex-shrink: 0; }
     .auto-pause-toggle strong { display: block; font-size: 0.82rem; }
     .auto-pause-toggle small { display: block; color: var(--text-muted); font-size: 0.7rem; margin-top: 0.1rem; }
     .auto-pause-banner {
-      margin: 0 0 0.65rem; padding: 0.45rem 0.65rem; border-radius: 8px;
-      background: #fff7ed; color: #9a3412; font-size: 0.78rem; font-weight: 600;
+      margin: 0 0 0.65rem; padding: 0.45rem 0.65rem; border-radius: 0;
+      background: var(--color-paper); color: var(--color-danger); font-size: 0.78rem; font-weight: 600;
       text-align: center;
     }
     .auto-pause-banner.hidden { display: none; }
-    .gps-pill.auto-paused { background: #fff7ed; color: #9a3412; border-color: #fdba74; }
+    .gps-pill.auto-paused { background: var(--color-paper); color: var(--color-danger); border-color: var(--color-signal); }
     .offtrack-banner {
       position: absolute; left: 50%; transform: translateX(-50%);
       top: 3.55rem; z-index: 520; max-width: calc(100% - 1.5rem);
-      background: #7f1d1d; color: #fff; font-size: 0.72rem; font-weight: 700;
-      padding: 0.4rem 0.75rem; border-radius: 999px; text-align: center;
-      box-shadow: 0 4px 14px rgba(127, 29, 29, 0.35); pointer-events: none;
+      background: var(--color-signal-ink); color: var(--color-sheet); font-size: 0.72rem; font-weight: 700;
+      padding: 0.4rem 0.75rem; border-radius: 0; text-align: center;
+      box-shadow: none; pointer-events: none;
     }
     .offtrack-banner.hidden { display: none; }
     #offTrackToggleWrap .app-premium-pill { margin-left: 0.25rem; vertical-align: middle; }
@@ -126,8 +126,8 @@
       width: 100%; border: none; background: none; cursor: pointer; padding: 0.15rem 0 0.2rem;
     }
     .sheet-handle {
-      width: 44px; height: 5px; border-radius: 999px;
-      background: #9ca3af; margin: 0;
+      width: 44px; height: 5px; border-radius: 0;
+      background: var(--color-rule-2); margin: 0;
     }
     .drawer-chevron {
       display: block; width: 22px; height: 12px; color: var(--green-700);
@@ -148,29 +148,29 @@
       50% { transform: translateY(-7px); opacity: 1; }
     }
     .figma-actions { gap: 2.4rem !important; margin-bottom: 0.55rem !important; }
-    .action-circle { color: #1a1a1a !important; font-weight: 600; }
+    .action-circle { color: var(--color-ink) !important; font-weight: 600; }
     .action-circle .circle {
-      width: 54px; height: 54px; box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+      width: 54px; height: 54px; box-shadow: none;
     }
-    .action-circle .circle.red { background: #e84a3c; }
-    .action-circle .circle.amber { background: #f0a020; }
-    .action-circle .circle.blue { background: #4a90c8; }
-    .action-circle .circle.green { background: #1f8f4a; }
+    .action-circle .circle.red { background: var(--color-danger); }
+    .action-circle .circle.amber { background: var(--color-signal); }
+    .action-circle .circle.blue { background: var(--color-sky); }
+    .action-circle .circle.green { background: var(--color-accent-2); }
     .figma-live-stats {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.35rem;
-      padding-top: 0.15rem; border-top: 1px solid #eee;
+      padding-top: 0.15rem; border-top: 1px solid var(--color-paper-2);
     }
     .live-stat, .p-stat {
       display: flex; align-items: center; justify-content: center; gap: 0.3rem;
-      font-size: 0.82rem; font-weight: 700; color: #1a1a1a; padding: 0.5rem 0.15rem;
+      font-size: 0.82rem; font-weight: 700; color: var(--color-ink); padding: 0.5rem 0.15rem;
     }
-    .live-stat + .live-stat { border-left: 1px solid #e5e7eb; }
+    .live-stat + .live-stat { border-left: 1px solid var(--color-sky-wash); }
     .drawer-extra { display: none; margin-top: 0.15rem; }
     .figma-sheet.expanded .drawer-extra { display: block; }
     .figma-sheet.expanded .figma-live-stats-compact { display: none; }
     .figma-open-stats {
       display: grid; gap: 0.15rem; margin-bottom: 0.55rem;
-      border-top: 1px solid #eee; padding-top: 0.25rem;
+      border-top: 1px solid var(--color-paper-2); padding-top: 0.25rem;
     }
     .figma-open-stats .stats-row {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -188,11 +188,11 @@
     }
     .elev-pace-chart .chart-heads {
       display: flex; justify-content: space-between; align-items: center;
-      font-size: 0.62rem; font-weight: 800; letter-spacing: 0.04em;
+      font-size: 0.62rem; font-weight: 800; letter-spacing: normal;
       margin-bottom: 0.2rem;
     }
-    .elev-pace-chart .chart-heads .elev { color: #7cb342; }
-    .elev-pace-chart .chart-heads .pace { color: #7eb6d9; }
+    .elev-pace-chart .chart-heads .elev { color: var(--color-signal); }
+    .elev-pace-chart .chart-heads .pace { color: var(--color-rule-2); }
     .elev-pace-chart svg { width: 100%; height: auto; display: block; }
     .figma-pause-stats {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.15rem 0; margin-bottom: 0.75rem;
@@ -203,8 +203,8 @@
       font-size: 0.72rem; font-weight: 600; color: var(--green-700); background: none; border: none; cursor: pointer;
     }
     .follow-banner {
-      display: none; margin: 0 0.75rem; padding: 0.45rem 0.65rem; border-radius: 10px;
-      background: rgba(255,255,255,0.95); box-shadow: 0 2px 10px rgba(0,0,0,.1);
+      display: none; margin: 0 0.75rem; padding: 0.45rem 0.65rem; border-radius: 0;
+      background: color-mix(in oklab, var(--color-sheet) 95%, transparent); box-shadow: none;
       font-size: 0.72rem; font-weight: 600; color: var(--green-900); z-index: 1100;
       position: absolute; left: 0; right: 0; top: 6.4rem;
     }
@@ -213,25 +213,25 @@
     .ico-elev-up::before, .ico-elev-down::before, .ico-pace::before, .ico-alt::before {
       font-size: 0.8rem; opacity: 0.85;
     }
-    .ico-clock::before { content: "⏱"; color: #7cb342; }
-    .ico-pin::before { content: "📍"; color: #4a90c8; }
-    .ico-elev::before, .ico-elev-up::before { content: "〰"; color: #7cb342; font-weight: 800; }
-    .ico-elev-down::before { content: "〰"; color: #7cb342; }
-    .ico-pace::before { content: "◔"; color: #4a90c8; }
-    .ico-alt::before { content: "▴"; color: #0b421a; }
+    .ico-clock::before { content: "⏱"; color: var(--color-signal); }
+    .ico-pin::before { content: "📍"; color: var(--color-sky); }
+    .ico-elev::before, .ico-elev-up::before { content: "〰"; color: var(--color-signal); font-weight: 800; }
+    .ico-elev-down::before { content: "〰"; color: var(--color-signal); }
+    .ico-pace::before { content: "◔"; color: var(--color-sky); }
+    .ico-alt::before { content: "▴"; color: var(--color-accent); }
     .figma-field { margin-bottom: 0.65rem; }
     .figma-field-label {
       display: block; font-size: 0.8rem; font-weight: 700; color: var(--green-900); margin-bottom: 0.3rem;
     }
     .figma-input {
-      background: #eef7f0 !important; border: 1px solid #d5e6da !important; border-radius: 10px !important;
+      background: var(--color-paper) !important; border: 1px solid var(--color-accent-wash) !important; border-radius: 0 !important;
     }
     .privacy-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; margin-bottom: 0.55rem;
     }
     .privacy-grid label {
       display: flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; font-weight: 600;
-      padding: 0.4rem 0.5rem; border: 1px solid #d5e6da; border-radius: 8px; background: #f7faf7;
+      padding: 0.4rem 0.5rem; border: 1px solid var(--color-accent-wash); border-radius: 0; background: var(--color-sheet);
       cursor: pointer; color: var(--green-900);
     }
     .privacy-grid input { accent-color: var(--green-700); }
@@ -240,24 +240,24 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; margin-bottom: 0.45rem;
     }
     .plan-tools button {
-      border: 1px solid #d5e6da; background: #f7faf7; border-radius: 10px;
+      border: 1px solid var(--color-accent-wash); background: var(--color-sheet); border-radius: 0;
       padding: 0.4rem 0.35rem; font-size: 0.72rem; font-weight: 800; color: var(--green-900); cursor: pointer;
     }
-    .plan-tools button.active { background: var(--green-900); color: #fff; border-color: var(--green-900); }
+    .plan-tools button.active { background: var(--green-900); color: var(--color-sheet); border-color: var(--green-900); }
     .plan-tools-row { display: flex; gap: 0.35rem; margin-bottom: 0.45rem; }
     .mk {
       width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center;
-      color: #fff; font-size: 0.58rem; font-weight: 800; box-shadow: 0 1px 4px rgba(0,0,0,.28);
+      color: var(--color-sheet); font-size: 0.58rem; font-weight: 800; box-shadow: none;
     }
-    .mk-start { background: #2d8a45; }
-    .mk-end { background: #d64545; }
-    .mk-via { background: #2563eb; }
-    .mk-poi { background: #f5a623; color: #1a1a1a; }
+    .mk-start { background: var(--color-accent-2); }
+    .mk-end { background: var(--color-danger); }
+    .mk-via { background: var(--color-sky); }
+    .mk-poi { background: var(--color-signal); color: var(--color-ink); }
     .start-bar-spacer { width: 56px; flex-shrink: 0; visibility: hidden; pointer-events: none; }
     .leaflet-tooltip.follow-name {
-      background: #fff; border: none; border-radius: 6px; padding: 0.12rem 0.35rem;
+      background: var(--color-sheet); border: none; border-radius: 6px; padding: 0.12rem 0.35rem;
       font-weight: 800; font-size: 0.62rem; color: var(--green-900);
-      box-shadow: 0 1px 4px rgba(0,0,0,.18);
+      box-shadow: 0 1px 4px color-mix(in oklab, var(--color-ink) 18%, transparent);
     }
     .leaflet-tooltip-top.follow-name::before { display: none; }
     .plan-panel {
@@ -270,11 +270,11 @@
       max-height: 58%;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
-      background: #fff;
+      background: var(--color-sheet);
       padding: 0.75rem 1rem calc(0.85rem + env(safe-area-inset-bottom, 0px));
       border-top: 1px solid var(--border);
-      border-radius: 20px 20px 0 0;
-      box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.12);
+      border-radius: 0;
+      box-shadow: none;
     }
     .plan-panel.show { display: block; }
     .phone-screen.plan-mode .map-tools-stack { bottom: auto; top: 9.25rem; }
@@ -288,24 +288,24 @@
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.35rem; margin: 0.55rem 0;
     }
     .plan-stat {
-      text-align: center; background: #f7faf7; border-radius: 10px; padding: 0.45rem 0.2rem;
+      text-align: center; background: var(--color-sheet); border-radius: 0; padding: 0.45rem 0.2rem;
     }
     .plan-stat .val { font-weight: 800; color: var(--green-900); font-size: 0.85rem; }
     .plan-stat .lbl { font-size: 0.62rem; color: var(--text-muted); }
     .env-modal {
       position: absolute; inset: 0; z-index: 45; display: none;
-      background: rgba(0,0,0,0.35); align-items: flex-end;
+      background: color-mix(in oklab, var(--color-ink) 35%, transparent); align-items: flex-end;
     }
     .env-modal.open { display: flex; }
     .env-modal-sheet {
-      background: white; border-radius: 20px 20px 0 0; padding: 1.15rem 1.2rem 1.35rem;
+      background: var(--color-sheet); border-radius: 0; padding: 1.15rem 1.2rem 1.35rem;
       width: 100%; max-height: 70%; overflow-y: auto;
     }
     .figma-photo-modal .env-modal-sheet { max-height: 92%; padding: 0; border-radius: 0; }
     .figma-photo-sheet { display: flex; flex-direction: column; min-height: 100%; }
     .figma-photo-head {
       display: flex; align-items: center; gap: 0.5rem;
-      padding: 0.85rem 1rem; border-bottom: 1px solid #eee;
+      padding: 0.85rem 1rem; border-bottom: 1px solid var(--color-paper-2);
     }
     .figma-photo-head strong { flex: 1; text-align: center; color: var(--green-900); margin-right: 2rem; }
     .figma-back {
@@ -314,7 +314,7 @@
     }
     .figma-photo-preview {
       height: 160px; background:
-        linear-gradient(160deg, rgba(11,66,26,0.25), rgba(0,0,0,0.15)),
+        linear-gradient(160deg, color-mix(in oklab, var(--color-accent) 25%, transparent), color-mix(in oklab, var(--color-ink) 15%, transparent)),
         url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80") center/cover;
       position: relative;
     }
@@ -324,7 +324,7 @@
     }
     .figma-photo-row {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 0.65rem 1.1rem; border-bottom: 1px solid #eee;
+      padding: 0.65rem 1.1rem; border-bottom: 1px solid var(--color-paper-2);
       font-size: 0.85rem; color: var(--text-muted);
     }
     .figma-photo-val { color: var(--green-900); font-weight: 700; }
@@ -332,10 +332,10 @@
     .figma-icon-pick button { padding: 0.35rem 0.55rem !important; font-size: 0.7rem !important; }
     .figma-photo-sheet .figma-field { padding: 0 1.1rem; }
     .figma-photo-sheet .btn { margin: 1rem 1.1rem 1.25rem; width: calc(100% - 2.2rem); }
-    .figma-photo-modal.open { align-items: stretch; background: #fff; }
+    .figma-photo-modal.open { align-items: stretch; background: var(--color-sheet); }
     .share-url {
-      font-size: 0.72rem; word-break: break-all; background: #f3f4f6;
-      padding: 0.55rem 0.65rem; border-radius: 8px; margin: 0.65rem 0; color: var(--green-900);
+      font-size: 0.72rem; word-break: break-all; background: var(--color-paper);
+      padding: 0.55rem 0.65rem; border-radius: 0; margin: 0.65rem 0; color: var(--green-900);
     }
   </style>
 </head>
@@ -345,9 +345,9 @@
       <a href="../get-app.html" id="backWeb"></a>
       <p style="font-size:0.8rem;opacity:0.8;margin-top:0.5rem" id="appNote"></p>
       <div id="envPillWrap" style="margin-top:0.5rem"></div>
-      <div class="lang-switch" style="margin:0.75rem auto 0;width:fit-content;background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.25)">
-        <button type="button" data-lang="en" style="color:#fff">EN</button>
-        <button type="button" data-lang="zh" style="color:#fff">繁</button>
+      <div class="lang-switch" style="margin:0.75rem auto 0;width:fit-content;background:color-mix(in oklab, var(--color-sheet) 15%, transparent);border-color:color-mix(in oklab, var(--color-sheet) 25%, transparent)">
+        <button type="button" data-lang="en" style="color:var(--color-sheet)">EN</button>
+        <button type="button" data-lang="zh" style="color:var(--color-sheet)">繁</button>
       </div>
     </div>
 
@@ -863,7 +863,7 @@
       const st = TW.getEnvState();
       const L = TW.getEnvLevel(st);
       document.getElementById("envPillWrap").innerHTML =
-        `<span class="env-mini-pill" style="background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.35);color:#fff">🌿 L${L} · A${st.A} B${st.B} C${st.C} D${st.D} E${st.E}</span>`;
+        `<span class="env-mini-pill" style="background:color-mix(in oklab, var(--color-sheet) 20%, transparent);border-color:color-mix(in oklab, var(--color-sheet) 35%, transparent);color:var(--color-sheet)">🌿 L${L} · A${st.A} B${st.B} C${st.C} D${st.D} E${st.E}</span>`;
     }
 
     function notifyAct(result, toastKey) {
