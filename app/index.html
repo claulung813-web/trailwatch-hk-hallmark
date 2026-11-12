@@ -1095,6 +1095,35 @@
       document.getElementById("submitD").textContent = t("env_cleanup_submit");
       document.getElementById("dBackLbl").textContent = t("env_back");
     }
+    let state = "idle";
+    let seconds = 0, dist = 0, gain = 0, loss = 0, routeIdx = 0, timer = null;
+    /** Auto-pause: stop when still, resume when moving again (demo + real-app behaviour). */
+    const AUTO_PAUSE_STILL_SEC = 10;
+    const AUTO_RESUME_MOVE_SEC = 3;
+    let autoPauseEnabled = true;
+    try {
+      const saved = localStorage.getItem("tw_auto_pause");
+      if (saved === "0") autoPauseEnabled = false;
+      if (saved === "1") autoPauseEnabled = true;
+    } catch (e) {}
+    let pauseReason = ""; // "auto" | "manual" | ""
+    let stillSeconds = 0;
+    let moveSeconds = 0;
+    let demoStillBurst = 0;
+    let autoResumeTimer = null;
+
+    /** Premium off-track alert vs planned / guide route. */
+    const OFF_TRACK_THRESHOLD_M = 50;
+    const OFF_TRACK_TOAST_COOLDOWN_MS = 18000;
+    let offTrackEnabled = false;
+    try {
+      offTrackEnabled = localStorage.getItem("tw_off_track") === "1";
+    } catch (e) {}
+    let guidePath = [];
+    let offTrackActive = false;
+    let lastOffTrackToastAt = 0;
+    let demoOffTrackBurst = 0;
+
     i18nUI();
     refreshEnvPill();
 
@@ -1201,34 +1230,6 @@
       }
     }
 
-    let state = "idle";
-    let seconds = 0, dist = 0, gain = 0, loss = 0, routeIdx = 0, timer = null;
-    /** Auto-pause: stop when still, resume when moving again (demo + real-app behaviour). */
-    const AUTO_PAUSE_STILL_SEC = 10;
-    const AUTO_RESUME_MOVE_SEC = 3;
-    let autoPauseEnabled = true;
-    try {
-      const saved = localStorage.getItem("tw_auto_pause");
-      if (saved === "0") autoPauseEnabled = false;
-      if (saved === "1") autoPauseEnabled = true;
-    } catch (e) {}
-    let pauseReason = ""; // "auto" | "manual" | ""
-    let stillSeconds = 0;
-    let moveSeconds = 0;
-    let demoStillBurst = 0;
-    let autoResumeTimer = null;
-
-    /** Premium off-track alert vs planned / guide route. */
-    const OFF_TRACK_THRESHOLD_M = 50;
-    const OFF_TRACK_TOAST_COOLDOWN_MS = 18000;
-    let offTrackEnabled = false;
-    try {
-      offTrackEnabled = localStorage.getItem("tw_off_track") === "1";
-    } catch (e) {}
-    let guidePath = [];
-    let offTrackActive = false;
-    let lastOffTrackToastAt = 0;
-    let demoOffTrackBurst = 0;
     const offTrackToggle = document.getElementById("offTrackToggle");
     if (offTrackToggle) {
       offTrackToggle.checked = !!(offTrackEnabled && TW.isMemberPremium && TW.isMemberPremium());
